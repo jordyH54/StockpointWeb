@@ -1,0 +1,129 @@
+﻿<!--<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+            text-align:justify;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size :12pt;
+        }   
+    </style>
+</head>
+<body>
+    Hola {usuario}:<br>
+    Recibimos una solicitud para restablecer la contraseña, para hacer efectivo el cambio por favor realiza los siguientes pasos: <br>
+    <div></div>  <button href="{link}">Cambiar contraseña</button><br><br>
+
+    Te recordamos que el enlace tiene una válidez de tiempo limitado, por lo que es importante que realices la regeneración de contraseña antes del día: {fechaExpiracion}.<br>
+    Si no solicitaste una nueva contraseña, puedes hacer caso omiso a este mensaje.<br>
+    Para la asígnación de una contraseña nueva, es importante que consideres lo siguiente:<br>
+    La contraseña debe incluir de 8 a 16 caracteres, contener al menos una letra o número y no contener el nombre o apellidos del usuario.
+</body>
+</html>-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Restablecer Contraseña</title>
+    <style>
+        body {
+            text-align: justify;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+            .button:hover {
+                background-color: #2980b9;
+            }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 15px;
+        }
+
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Restablecimiento de Contraseña</div>
+
+        <p>Hola <strong>{usuario}</strong>,</p>
+
+        <p>Recibimos una solicitud para restablecer tu contraseña. Para completar este proceso, por favor sigue estos pasos:</p>
+
+        <div style="text-align: center; margin: 25px 0;">
+            <a href="{link}" class="button">Cambiar Contraseña</a>
+        </div>
+
+        <div class="highlight">
+            <p><span class="warning">Importante:</span> Este enlace tiene una validez limitada y expirará el <strong>{fechaExpiracion}</strong>.</p>
+        </div>
+
+        <p>Si no solicitaste un cambio de contraseña, puedes ignorar este mensaje de manera segura.</p>
+
+        <p>Al crear una nueva contraseña, recuerda que debe cumplir con los siguientes requisitos:</p>
+
+        <ul>
+            <li>Entre 8 y 16 caracteres de longitud</li>
+            <li>Contener al menos una letra y un número</li>
+            <li>No debe incluir tu nombre o apellidos</li>
+            <li>Se recomienda usar mayúsculas, minúsculas y caracteres especiales</li>
+        </ul>
+
+        <div class="footer">
+            <p>Este es un mensaje automático, por favor no respondas directamente a este correo.</p>
+            <p>&copy; 2023 TuEmpresa. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

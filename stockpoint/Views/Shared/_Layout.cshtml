@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/5af21056f7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <script src="~/Scripts/jsOcadis.js"></script>
+    
+
+    @*@{
+            string sysToken = "Tokenctual";
+        }*@
+<style>
+    .hidden {
+        display: none !important;
+    }
+    /* Estilo para el <li> que contiene el botón Salir */
+    .salir-li {
+        margin-top: 10px; /* Separación de los otros elementos */
+        list-style: none; /* Quita el bullet point (opcional) */
+    }
+
+    /* Contenedor del botón (para centrarlo si es necesario) */
+    .contenedor-salir {
+        text-align: center;
+    }
+
+    /* Estilo del botón Salir */
+    .btn-salir {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #f44336; /* Color rojo */
+        color: white !important; /* Fuerza el color blanco (evita herencia de estilos) */
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Efecto hover (al pasar el mouse) */
+        .btn-salir:hover {
+            background-color: #d32f2f; /* Rojo más oscuro */
+            color: white;
+        }
+
+        /* Efecto active (al hacer clic) */
+        .btn-salir:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+</style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("StockPolint", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="eliminar">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="eliminar">@Html.ActionLink("Login", "Login", "Home")</li>
+
+                    @*<li class="dropdown  hidden">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">Configuración <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown hidden">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">Administración <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Catálogo", "Catalogo", "Administracion")</li>
+                                <li>@Html.ActionLink("Bitácora", "Resultado", "Home")</li>
+                            </ul>
+                        </li>*@
+
+                    <!-- Tus enlaces existentes -->
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    <li class="salir-li salirL hidden">
+                        <div class="contenedor-salir">
+                            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn-salir" })
+                        </div>
+                    </li>
+                </ul>
+                @*<ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    <hr />
+
+    @*<script>
+        // Función mejorada para obtener el token
+        
+
+        // Función para cargar el menú dinámico
+       
+
+        // Función para actualizar visibilidad
+        
+
+        
+    </script>*@
+    <input class="sysToken" value="" />
+    <input class="sysPantalla" value="@ViewBag.sysPage" />
+
+</body>
+</html>

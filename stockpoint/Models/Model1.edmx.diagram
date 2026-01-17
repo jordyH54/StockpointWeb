@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b38482dfe6741b7b78e10dac066122b" Name="Diagram1">
+        <EntityTypeShape EntityType="dbstockpointModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblCampo" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblCatalogo" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblCompra" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblDetalleVenta" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblPantalla" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblPermisoPorPantalla" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblProducto" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblProveedor" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblResultado" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblTokenRecuperar" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblUsuario" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblVenta" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.tblVentas" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.systables" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwCampo" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwDetalleVenta" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwPantallaPorPermiso" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwPantallas" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwProducto" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwProveedor" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwResultado" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwTablas" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwtblCompraDetallada" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwtblTokenRecuperar" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwUsuario" Width="1.5" PointX="13.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwUsuarioLogin" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbstockpointModel.vwVenta" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblCampo_tblCatalogo1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblPantalla_estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblPermisoPorPantalla_permiso" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblProducto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblProducto_Estatus" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblProducto_Unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblProveedor_tblCatalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblUsuario_tblCatalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblVenta_tipopagoo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblVentaCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblDetalleVenta_tblProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblDetalleVenta_tblVenta" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblPermisoPorPantalla_tblPantalla" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblVenta_tblUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="dbstockpointModel.FK_tblVentas_tblUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

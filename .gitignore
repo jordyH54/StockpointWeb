@@ -1,0 +1,33 @@
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / IDE
+.vscode/
+.idea/
+*.vs/
+
+# Logs
+*.log
+
+# Residuos de paquetes
+*.nupkg
+*.snupkg
+
+# Rider
+.idea/
+
+# OS Files
+*.DS_Store
+Thumbs.db
+
+# NuGet
+*.nuget

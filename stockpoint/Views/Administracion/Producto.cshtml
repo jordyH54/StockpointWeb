@@ -1,0 +1,312 @@
+﻿
+<style>
+    /* Estilos mejorados que no interfieren con Bootstrap */
+    .dropdown-dark {
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #333;
+        width: 100%;
+        height: 8%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+        .dropdown-dark option {
+            background-color: #000;
+            color: #fff;
+            font-size: 25px;
+        }
+    
+
+
+
+    i {
+        margin-left: 8px;
+    }
+
+    .cmdEditarCatalogo:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+
+    .rowmar {
+        margin-top: 50px;
+    }
+    
+    /* Eliminé los estilos que afectan el layout de Bootstrap */
+
+    /* Estilos del switch */
+    .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .hidden-switch {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ff4444;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 7px;
+            bottom: 7px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    .hidden-switch:checked + .switch-slider {
+        background-color: #4CAF50;
+    }
+
+        .hidden-switch:checked + .switch-slider:before {
+            transform: translateX(18px);
+        }
+
+    /* Estilo del input */
+    .switch-input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 150px;
+        transition: border-color 0.3s;
+    }
+    label{
+        font-size:20px
+    }
+    input{
+        font-size:20px;
+    }
+    .col-md-3 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .table-container {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-scroll {
+        overflow-y: auto;
+        max-height: 100%;
+    }
+    .table-responsive {
+        min-height: 0; /* Necesario para flexbox en algunos navegadores */
+    }
+
+    /* Mantén tus estilos hover */
+        /* Asegura que la tabla ocupe todo el ancho */
+        .table-responsive table {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+    /* Estilo para los controles de paginación */
+    .tfood {
+        padding: 10px 0;
+        background: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+    }
+
+    /* Mantén el hover de las filas */
+    .table-hover tbody tr:hover {
+        background: rgb(51, 153, 255);
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100" style="padding-top: 6%;">
+            <!-- Columna izquierda (3/12) -->
+            <div class="col-md-3 h-100 d-flex flex-column">
+                @*<div class="pnControl thTable tblCatalogo"></div>*@
+                <div class="pnControl">
+                    <input type="text" class="txtBuscar  form-control" placeholder="Buscar Producto" table="tblCatalogo" />
+                </div>
+
+                <!-- Contenedor con scroll para la tabla -->
+                <div class="table-responsive flex-grow-1" style="overflow-y: auto; max-height: 85vh; margin-top:4%">
+                    <table class="table table-hover table-data">
+                        <thead>
+                            <tr>
+                                <th>Acción</th>
+                                <th>Producto</th>
+                                <th>Código</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tblDatos tblCatalogo" table="tblCatalogo"></tbody>
+                    </table>
+                </div>
+
+                <!-- Controles de paginación (fuera del área de scroll) -->
+                
+            </div>
+
+            <!-- Columna derecha (9/12) -->
+            <div class="col-md-9 h-100" style="padding: 2%; overflow-y: auto;">
+
+
+                <div class="row mt-3 rowmar">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Codigo</label>
+                            <input class="form-control tblCatalogo codigo" type="text" placeholder="Codigo">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Cantidad Minima</label>
+                            <input class="form-control tblCatalogo canMin" type="number" placeholder="Cantidad minima">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Existencia</label>
+                            <input class="form-control tblCatalogo existencia" type="number" placeholder="Existencia">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Producto</label>
+                            <input class="form-control tblCatalogo  producto" type="text" placeholder="Producto">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <input class="form-control tblCatalogo  descripcion" type="text" placeholder="Descripcion">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-3">
+
+                        <label style="margin: 15px 0 15px auto">Unidad</label>
+                        <select class="form-control dropdown-dark cmbUnidad " catalogo="Unidad" cmb="cmbUnidad">
+                        </select>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Costo por Caja</label>
+                            <input class="form-control tblCatalogo  costoxCaja" type="text" placeholder="$0.00">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Pieza por Caja</label>
+                            <input class="form-control tblCatalogo  piezaxCaja" type="number" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Piezas por Paquete</label>
+                            <input class="form-control tblCatalogo  piezaxPaquete" type="number" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Precio Publico</label>
+                            <input class="form-control tblCatalogo  precioPublico" type="text" placeholder="$0.00">
+                        </div>
+                    </div>
+                </div>
+                <div class="row  rowmar">
+                    <div class="col-md-3">
+
+                        <label style="margin: 15px 0 15px auto">IdCategoria</label>
+                        <select class="form-control dropdown-dark cmbCatePro " catalogo="CategoriaProductos" cmb="cmbCatePro">
+                        </select>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Costo por pieza</label>
+                            <input class="form-control tblCatalogo  costoxPieza" type="text" placeholder="$0.00" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Costo por paquete</label>
+                            <input class="form-control tblCatalogo  costoxPaquete" type="text" placeholder="$0.00" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Utilidad por producto</label>
+                            <input class="form-control tblCatalogo  uxProducto" type="text" placeholder="$0.00" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Utilidad por Caja</label>
+                            <input class="form-control tblCatalogo  uxCaja" type="text" placeholder="$0.00" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 ">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Imagen</label>
+                            <input class="form-control tblCatalogo  imagen" type="text" placeholder="imagen">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Id Estatus</label>
+                            <select class="form-control dropdown-dark cmbEP " catalogo="Estatus del Registro" cmb="cmbEP">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row mb-4 rowmar">
+                        <div class="col-md-12">
+                            <div class="form-group text-right ">
+                                <button type="button" class="btn btn-warning btnNuevo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-plus" viewBox="0 0 14 14">
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                                    </svg> Nuevo
+                                </button>
+                                <button type="button" class="btn btn-primary guardarBP"><i class="fas fa-save "></i> Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+
+

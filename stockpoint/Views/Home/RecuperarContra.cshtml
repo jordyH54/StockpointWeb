@@ -1,0 +1,173 @@
+﻿<style>
+    .login-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+    .text-muted {
+        font-size: 0.8em;
+        color: #6c757d;
+        display: block;
+        margin-top: 5px;
+    }
+
+    #errorMessage {
+        transition: all 0.3s ease;
+    }
+    
+</style>
+
+<div class="login-container">
+    <div id="errorMessage" class="alert alert-danger mt-3" style="display:none;"></div>
+    <div class="Login p-4 mb-4">
+        <h1 class="text-center mb-4" id="welcomeMessage" style="color:black">Restablecer Contraseña</h1>
+        <div class="mb-4">
+            <input type="password" class="form-control Password1" placeholder="Ingresa tu contraseña nueva" required>
+            <small class="text-muted">Mínimo 8 caracteres, con al menos un número, una mayúscula y un carácter especial</small>
+        </div>
+        <div class="mb-4">
+            <input type="password" class="form-control Password2" placeholder="Confirma tu contraseña" required>
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-success cmdCambiarContraseña">Cambiar</button>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            // Obtener token de la URL
+            var url = "../../WebServices/";
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            infoToken(token);
+            $('.sysToken').val(token)
+            if (!token) {
+                showError("Enlace inválido: falta el token de seguridad");
+                return;
+            }
+            
+            
+            $('.cmdCambiarContraseña').click(function () {
+                const newPassword = $('.Password1').val();
+                const confirmPassword = $('.Password2').val();
+
+                // Validaciones básicas
+                if (newPassword !== confirmPassword) {
+                    showError("Las contraseñas no coinciden");
+                    return;
+                }
+
+                if (newPassword.length < 8) {
+                    showError("La contraseña debe tener al menos 8 caracteres");
+                    return;
+                }
+
+                const $btn = $(this);
+                $btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Procesando...');
+
+                // Objeto corregido para coincidir con el método
+                var obj = {
+                    Token: token,
+                    ClaveAcceso: newPassword,
+                    ClaveAcceso2: confirmPassword,
+                    R: {
+                        modulo: $('.sysPantalla').val(),
+                        metodos: 'CambiarContra',
+                        Token: token,
+                    }
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: url + "Usuarios",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(obj),
+                    async: true,
+                    processData: false,
+                    cache: false,
+                    success: function (Resultado) {
+                        console.log("Respuesta completa:", Resultado);
+
+                        // Verifica si la respuesta tiene la estructura esperada
+                        if (Resultado && Resultado.R && Resultado.R.Estatus === "Correcto") {
+                            alert("¡Contraseña cambiada exitosamente!");
+                            window.location.href = '/'; // Redirección después de éxito
+                        } else {
+                            const errorMsg = Resultado.R?.mensaje || Resultado.mensaje || "Error desconocido";
+                            showError(errorMsg);
+                            $btn.prop('disabled', false).html('Cambiar Contraseña');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error en la solicitud:", status, error, xhr.responseText);
+                        showError("Error al procesar la solicitud. Por favor intente nuevamente.");
+                        $btn.prop('disabled', false).html('Cambiar Contraseña');
+                    }
+                });
+            });
+        });
+
+
+
+      
+
+        function infoToken(token) {
+            var obj = {
+                Token: token,
+                // Vacío porque solo queremos validar
+                R: {
+                    modulo: $('.sysPantalla').val(),
+                    metodos: 'RecuperarDataToken',
+                    Token: token,
+                }
+            };
+            $.ajax({
+                type: "POST",
+                url: url + "Usuarios",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(obj),
+                async: true,
+                processData: false,
+                cache: false,
+                success: function (Resultado) {
+                    console.log(Resultado);
+                    if (Resultado.R.Estatus === "Correcto") {
+                        $('#welcomeMessage').text('Bienvenido ' + Resultado.R.Usuario);
+                        $('.sysToken').val(token);
+                         // Asegúrate que esta ruta exista
+                    } else {
+                        showError('El token no es valido');
+                        $('.Login').hide();
+                    }
+                },
+                error: function (xhr) {
+                    showError("Error al validar el token");
+                    $('.Login').hide();
+                }
+            });
+        }
+
+
+        function showError(message) {
+            const $error = $('#errorMessage');
+            $error.text(message).show();
+            setTimeout(() => $error.fadeOut(500), 5000);
+        }
+    </script>
+
+    <style>
+        
+
+        
+    </style>
+}

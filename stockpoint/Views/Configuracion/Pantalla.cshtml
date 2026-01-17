@@ -1,0 +1,327 @@
+﻿
+
+<style>
+    .pantalla-principal td {
+        font-weight: bold;
+        font-size:17px;
+        border-top: 2px solid #dee2e6 !important;
+        background:rgba(0,0,0,0.3);
+    }
+
+    .submenu-header td {
+        font-style: italic;
+        color: #6c757d;
+        background-color: #f8f9fa;
+    }
+
+    .subpantalla td {
+        padding-left: 30px !important;
+    }
+
+    .separador td {
+        height: 2px;
+        background-color: rgba(51, 153, 255,0.8);
+    }
+    /* Estilos mejorados que no interfieren con Bootstrap */
+
+    .dropdown-dark {
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #333;
+        width: 100%;
+        height: 8%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+
+        .dropdown-dark option {
+            background-color: #000;
+            color: #fff;
+            font-size: 25px;
+        }
+
+    table {
+        max-width: 100%;
+    }
+
+    .table-hover tbody tr:hover {
+        background: rgb(51, 153, 255);
+        color: white;
+        border-radius: 250px;
+    }
+
+        .table-hover tbody tr:hover i.fas {
+            color: white !important;
+            transform: scale(1.4);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+
+
+    i {
+        margin-left: 8px;
+    }
+
+    .cmdEditarCatalogo:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+
+    .rowmar {
+        margin-top: 50px;
+    }
+
+    /* Eliminé los estilos que afectan el layout de Bootstrap */
+
+    /* Estilos del switch */
+    .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .hidden-switch {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ff4444;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 7px;
+            bottom: 7px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    .hidden-switch:checked + .switch-slider {
+        background-color: #4CAF50;
+    }
+
+        .hidden-switch:checked + .switch-slider:before {
+            transform: translateX(18px);
+        }
+
+    /* Estilo del input */
+    .switch-input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 150px;
+        transition: border-color 0.3s;
+    }
+
+    label {
+        font-size: 20px
+    }
+
+    input {
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100" style="padding-top: 6%;">
+            <!-- Columna izquierda (3/12) -->
+            <div class="col-md-3 w-100 h-100">
+                @*<select class="form-control dropdown-dark cmbPantallas" catalogo="Pantallas" cmb="cmbPantallas">
+                </select>*@
+
+                <table class="table table-hover table-data">
+                    <thead>
+                        <tr>
+                            <th>Pantallas</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tblDatos tblPantallas " table="tblCatalogo"></tbody>
+                </table>
+
+                @*<div class="pnControl thTable tblCatalogo"></div>
+            <div class="pnControl ">
+                <input type="text" class="txtBuscar form-control" placeholder="Buscar catátalogo" table="tblCatalogo" />
+            </div>
+            <table class="table table-hover table-data">
+                <thead>
+                    <tr>
+
+                        <th>Campo</th>
+                    </tr>
+                </thead>
+
+                <tbody class="tblDatos tblCatalogo " table="tblCatalogo"></tbody>
+            </table>
+            <div class="pnControl tfood tblCatalogo"></div>*@
+
+            </div>
+
+            <!-- Columna derecha (9/12) -->
+            
+            <div class="col-md-9 h-100 pantalla" style="overflow-y: auto;">
+                <div class="row " style="margin:0 1% 0 1%; background:black">
+                    <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                        <label class="btn btn-secondary btnAFP">
+                            <input  type="radio" name="options" id="option1" autocomplete="off" > Pantalla
+                        </label>
+                        <label class="btn btn-secondary btnAFR">
+                            <input  type="radio" name="options" id="option2" autocomplete="off"> Permisos
+                        </label>
+                    </div>
+                </div>
+                <div class="framePantalla " style="margin-top:2%">
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Pantalla</label>
+                                <input class="form-control tblCatalogo nPantalla " type="text" placeholder="Nombre de la Pantalla">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Orden</label>
+                                <input class="form-control tblCatalogo OrdenP" type="number" placeholder="1">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Pantalla Origen</label>
+                                <select id="ipEs" class="form-control dropdown-dark cmbOrigen" catalogo="Origen para pantallas" cmb="cmbOrigen">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Estatus</label>
+                                <select class="form-control dropdown-dark cmbEstatus" catalogo="Estatus Pantalla" cmb="cmbEstatus">
+                                </select>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Estilos</label>
+                                <input id="ipVa" class="form-control tblCatalogo cPantalla" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>ToolTip</label>
+                                <input id="ipVa" class="form-control tblCatalogo cToolTip" type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  ">
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <label>Descripción</label><br />
+                                <textarea class="long-text-input col-md-12 tblCatalogo Descripcion" style="height:8%; color:black;"
+                                          placeholder="Escribe aquí tu texto..."
+                                          maxlength="10000"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6  form-group">
+                            <label>Pregunta para eliminar</label>
+                            <input id="ipVa" class="form-control tblCatalogo cPE" type="text" placeholder="">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row  " style="margin-top:1%">
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <label>Mensaje de guardar</label>
+                                <input id="ipVa" class="form-control tblCatalogo cMG" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Mensaje de eliminar</label>
+                                <input id="ipVa" class="form-control tblCatalogo cME" type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Link</label>
+                                <input id="ipVa" class="form-control tblCatalogo uPantalla" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Link Movil</label>
+                                <input id="ipVa" class="form-control tblCatalogo uMPantalla" type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row   lista">
+
+                    </div>*@
+                    <div class="row  rowmar">
+                        <div class="col-md-12">
+                            <div class="form-group text-right cancelar">
+                                <button type="submit" class="btn btn-warning">
+                                    Cancelar
+                                </button>
+                                <button type="button" class="btn btn-primary crearBP">
+                                    <i class="fas fa-save cancelar " style="margin-right:3px"></i>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="framePermisos hidden" style="margin-top:2%">
+                    <div class="row   lista">
+
+                    </div>
+                    <div class="row  rowmar">
+                        <div class="col-md-12">
+                            <div class="form-group text-right ">
+                                <button type="button" class="btn btn-primary guardarPR">
+                                    <i class="fas fa-save cancelar"></i>Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

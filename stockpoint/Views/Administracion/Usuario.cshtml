@@ -1,0 +1,227 @@
+﻿@{ 
+    ViewBag.sysPage = "Usuario";
+}
+
+<style>
+    /* Estilos mejorados que no interfieren con Bootstrap */
+    .dropdown-dark {
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #333;
+        width: 100%;
+        height: 8%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+        .dropdown-dark option {
+            background-color: #000;
+            color: #fff;
+            font-size: 25px;
+        }
+    table {
+        max-width: 100%;
+    }
+    .table-hover tbody tr:hover {
+        background: rgb(51, 153, 255);
+        color: white;
+        border-radius: 250px;
+    }
+
+        .table-hover tbody tr:hover i.fas {
+            color: white !important;
+            transform: scale(1.4);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+
+
+    i {
+        margin-left: 8px;
+    }
+
+    .cmdEditarCatalogo:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+
+    .rowmar {
+        margin-top: 50px;
+    }
+    
+    /* Eliminé los estilos que afectan el layout de Bootstrap */
+
+    /* Estilos del switch */
+    .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .hidden-switch {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ff4444;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 7px;
+            bottom: 7px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    .hidden-switch:checked + .switch-slider {
+        background-color: #4CAF50;
+    }
+
+        .hidden-switch:checked + .switch-slider:before {
+            transform: translateX(18px);
+        }
+
+    /* Estilo del input */
+    .switch-input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 150px;
+        transition: border-color 0.3s;
+    }
+    label{
+        font-size:20px
+    }
+    input{
+        font-size:20px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100" style="padding-top: 6%;">
+            <!-- Columna izquierda (3/12) -->
+            <div class="col-md-3 w-100 h-100">
+                <select class="form-control dropdown-dark cmbRol  "  catalogo="Rol" cmb="cmbRol">
+                </select>
+                
+                <div class="pnControl thTable tblCatalogo"></div>
+                <div class="pnControl ">
+                    <input type="text" class="txtBuscar form-control" placeholder="Buscar catátalogo" table="tblCatalogo" />
+                </div>
+                <table class="table table-hover table-data">
+                    <thead>
+                        <tr>
+                            
+                            <th>Usuario</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tblDatos tblCatalogo " table="tblCatalogo"></tbody>
+                </table>
+                <div class="pnControl tfood tblCatalogo"></div>
+
+            </div>
+
+            <!-- Columna derecha (9/12) -->
+            <div class="col-md-9 h-100" style="padding: 2%; overflow-y: auto;">
+                <div class="form-group">
+                    <label>IdUsuario</label>
+                    <input class="form-control col-md-2 tblCatalogo Id_Catalogo idUsuario " type="number" placeholder="0" disabled>
+                </div>
+
+                <div class="row mt-3 rowmar">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input class="form-control tblCatalogo Catalogo Nombre" type="text" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <select class="form-control dropdown-dark cmbRol " catalogo="Rol"  cmb="cmbRol">
+                            </select>
+                            <input class=" form-control idRol" type="number" name="name" value="" disabled/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Estatus</label>
+                            <select class="form-control dropdown-dark  cmbidEstatus" catalogo="Estatus del usuario" cmb="cmbidEstatus">
+                            </select>
+                            <input class=" form-control idEstatus" type="number" name="name" value="" disabled/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Correo</label>
+                            <input class="form-control tblCatalogo Orden CorreoE" type="text" placeholder="1">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input class="form-control tblCatalogo Valor Contra" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Telefono1</label>
+                            <input class="form-control tblCatalogo Orden tel1" type="text" placeholder="1">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Telefono2</label>
+                            <input class="form-control tblCatalogo Valor tel2" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-4 rowmar">
+                    <div class="col-md-12">
+                        <div class="form-group text-right ">
+                            <button type="submit" class="btn btn-warning">
+                                Cancelar
+                            </button>
+                            <button type="button" class="btn btn-primary guardarB"><i class="fas fa-save cancelar"></i> Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+

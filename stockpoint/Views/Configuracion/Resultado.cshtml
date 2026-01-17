@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Bitacora";
+    ViewBag.sysPage = "Bitacora";
+}
+
+<style>
+    i {
+        color: white
+    }
+
+    .dropdown-dark {
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #333;
+    }
+
+        .dropdown-dark option {
+            background-color: #000;
+            color: #fff;
+        }
+
+    .table-hover tbody tr:hover {
+        background: rgb(51, 153, 255);
+        color: black;
+        border-radius: 250px;
+        transform: scale(1.12);
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+</style>
+
+<div style="display: flex; gap: 20px; align-items: flex-start; font-family: Arial, sans-serif; padding: 10px; margin-top:4%">
+    <!-- Grupo Pantalla -->
+    <div>
+        <p style="margin: 0 0 5px 0;">Pantalla</p>
+        <select class="dropdown-dark cmbFiltroBitacora cmbRPan"
+                style="margin-top: 0;"
+                catalogo="Pantallas para bitacora"
+                cmb="cmbRPan"></select>
+    </div>
+
+    <!-- Grupo Metodos -->
+    <div>
+        <p style="margin: 0 0 5px 0;">Metodos</p>
+        <select class="dropdown-dark cmbFiltroBitacora cmbMetodos"
+                style="margin-top: 0;"
+                catalogo="Metodos para bitacora"
+                cmb="cmbMetodos"></select>
+    </div>
+
+    <!-- Grupo Usuarios -->
+    <div>
+        <p style="margin: 0 0 5px 0;">Usuarios</p>
+        <select class="dropdown-dark cmbFiltroBitacora cmbUsuarios"
+                style="margin-top: 0;"
+                catalogo="Usuarios para bitacora"
+                cmb="cmbUsuarios"></select>
+    </div>
+    <div>
+        <p style="margin: 0 0 5px 0;">Fecha Inicial</p>
+        <input type="date" name="name" value="" class="fechaIni dropdown-dark cmbFiltroBitacora" />
+    </div>
+    <div>
+        <p style="margin: 0 0 5px 0;">Fecha Final</p>
+        <input type="date" name="name" value="" class="fechaFin dropdown-dark cmbFiltroBitacora" />
+    </div>
+    <div>
+        <p style="margin: 0 0 5px 0;">Estatus</p>
+        <select class="dropdown-dark cmbFiltroBitacora cmbEstatus"
+                style="margin-top: 0;"
+                catalogo="Estatus para bitacora"
+                cmb="cmbEstatus"></select>
+    </div>
+
+</div>
+<div class="pnControl thTable tblBitacora"></div>
+<div class="pnControl ">
+    <input type="text" class="txtBuscar form-control" placeholder="Buscar en Bitacora" table="tblBitacora" />
+</div>
+<table class="table table-hover" style="margin-top:40px">
+    <thead>
+        <tr>
+            <th></th>
+            <th>idResultado</th>
+            <th>Pantalla</th>
+            <th>Métodos</th>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Estatus</th>
+            <th>Mensaje</th>
+            <th>Mensaje de sistema</th>
+        </tr>
+    </thead>
+    <tbody class="tblDatos tblBitacora " table="tblBitacora"></tbody>
+    
+</table>
+<div class="pnControl tfood tblBitacora"></div>
+
+

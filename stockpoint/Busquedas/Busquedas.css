@@ -1,0 +1,66 @@
+﻿.tBodyDatos::-webkit-scrollbar,
+.tBodyDatosReportes::-webkit-scrollbar,
+.tBodyPagos::-webkit-scrollbar {
+    border-radius: 20px; /* roundness of the scroll thumb */
+    width: 12px; /* width of the entire scrollbar */
+}
+
+.tBodyPagos::-webkit-scrollbar,
+.tBodyDatosReportes::-webkit-scrollbar,
+.tBodyDatosReportes::-webkit-scrollbar {
+    border-radius: 20px; /* roundness of the scroll thumb */
+    background: #9abe8e; /* color of the tracking area */
+}
+
+.tBodyPagos::-webkit-scrollbar,
+.tBodyDatos::-webkit-scrollbar,
+.tBodyDatosReportes::-webkit-scrollbar {
+    background-color: #9abe8e; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #366909; /* creates padding around scroll thumb */
+}
+
+.tfood {
+    text-align: right;
+}
+
+.tBodyDatos::-webkit-scrollbar,
+.tBodyDatosReportes::-webkit-scrollbar {
+    background-color: #366909; /* color of the scroll thumb */
+    color: #fff;
+}
+
+.NoPag,
+.cmdSiguiente,
+.cmdAnterior {
+    border: 1px solid #d3cfcf; /* creates padding around scroll thumb */
+    background-color: #cfdef7; /* color of the scroll thumb */
+    border-radius: 5px; /* roundness of the scroll thumb */
+    padding: 2px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+    .NoPag:hover,
+    .cmdSiguiente:hover,
+    .cmdAnterior :hover {
+        opacity: 1;
+    }
+
+.NoPagActivo {
+    border: 1px solid #cfdef7; /* creates padding around scroll thumb */
+    background-color: #5773a0; /* color of the scroll thumb */
+    border-radius: 5px; /* roundness of the scroll thumb */
+    padding: 2px;
+    cursor: pointer;
+    color: #cfdef7;
+}
+
+.txtBuscar {
+    max-width: 200px;
+    float: right;
+}
+.pnControl {
+    width: 100%;
+    text-align: right;
+}
