@@ -23,7 +23,7 @@ El sistema fue implementado en los siguientes contextos:
 Esta aplicación forma parte del mismo proyecto que:
 
 * 📱 Aplicación Móvil (Android / iOS):  
-  [Hybrid Management System Mobile](https://github.com/tuusuario/hybrid-management-system-mobile)
+  [Hybrid Management System Mobile](https://github.com/jordyH54/StockpointMovil)
 
 ---
 
