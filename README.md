@@ -1,4 +1,4 @@
-# Sistema Híbrido de Gestión Empresarial – Web
+# Sistema Híbrido desarrollado en .Net – Web
 
 Aplicación **web** que forma parte de un **sistema híbrido multiplataforma**, desarrollada como una **plataforma reutilizable** aplicada en distintos dominios de negocio.
 
@@ -13,7 +13,7 @@ La aplicación web permite la gestión de procesos empresariales a través de un
 El sistema fue implementado en los siguientes contextos:
 
 * Punto de Venta (POS)
-* Historias Clínicas
+* Historial Clínicos
 * Gestión de Pólizas para Aseguradora
 
 ---
@@ -23,7 +23,7 @@ El sistema fue implementado en los siguientes contextos:
 Esta aplicación forma parte del mismo proyecto que:
 
 * 📱 Aplicación Móvil (Android / iOS):  
-  [Hybrid Management System Mobile](https://github.com/jordyH54/StockpointMovil)
+  [StockpointMovil](https://github.com/jordyH54/StockpointMovil)
 
 ---
 
@@ -68,7 +68,9 @@ Esta aplicación forma parte del mismo proyecto que:
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
 **Jordy Manuel Hernandez Rosario**  
-Ingeniero en Sistemas Computacionales
+**Aaron Cordova Hernandez**
+
+Ingenieros en Sistemas Computacionales
