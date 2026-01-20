@@ -82,6 +82,25 @@ El mecanismo de restablecimiento de contraseña ofrece a los usuarios una altern
 
 # Asignación de roles de usuarios
 El sistema administra de forma adecuada los distintos tipos de usuarios, como público, web master, administrador, responsable de piso y vendedor, asignando a cada uno permisos específicos de acuerdo con sus funciones. Esto permite un control claro de las acciones que pueden realizar dentro de la plataforma y fortalece la seguridad del sistema.
+Usuario público
+Tiene acceso limitado al sistema, generalmente enfocado a la visualización de información básica sin necesidad de autenticación. No puede realizar modificaciones ni acceder a funciones administrativas.
+
+**Perimisos de usuario**
+
+* **Usuario público:**
+Tiene acceso limitado al sistema, generalmente enfocado a la visualización de información básica sin necesidad de autenticación. No puede realizar modificaciones ni acceder a funciones administrativas.
+
+* **Vendedor:**
+Es responsable de las operaciones de venta dentro del sistema. Puede registrar ventas, seleccionar productos, aplicar métodos de pago y consultar información relacionada con sus transacciones. Su acceso está restringido a funciones operativas, sin permisos de configuración o administración general.
+
+* **Responsable de piso:**
+Supervisa las actividades de venta y el control de inventario. Puede consultar existencias, revisar movimientos de productos y apoyar en la gestión operativa del punto de venta. Su rol permite mayor acceso que el vendedor, pero sin llegar a funciones críticas del sistema.
+
+* **Administrador:**
+Cuenta con permisos amplios para gestionar el sistema. Puede administrar usuarios, productos, categorías, inventarios, métodos de pago y consultar reportes generales. Su función principal es asegurar el correcto funcionamiento y control de la plataforma.
+
+* **Web Master:**
+Tiene control total sobre la configuración del sistema web. Se encarga de la administración técnica, mantenimiento, configuración de catálogos, ajustes del sistema y gestión avanzada de usuarios y permisos.
 
 <p align="center">
   <img src="images/usuario.png" alt="Imagen de hijos" width="1000"/>
