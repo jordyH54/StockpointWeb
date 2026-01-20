@@ -68,7 +68,7 @@ Esta aplicación forma parte del mismo proyecto que:
 
   ## ⚙️ Resultados
   En las capturas de pantalla se observa que no se muestran datos en el sistema debido a que actualmente no se cuenta con acceso a la base de datos. Esto se debe a que, durante mi estancia en la empresa, la base de datos era administrada y editada exclusivamente desde los equipos de la empresa. Al finalizar mi periodo de estancia, dicho acceso me fue retirado por lo que el sistema ya no puede establecer conexión con la base de datos.
-# Seguridad Login
+# Login y Seguridad 
 El funcionamiento del sistema web confirma que el acceso está restringido únicamente a usuarios previamente registrados, validando correctamente sus datos de inicio de sesión y evitando que personas sin autorización puedan ingresar a la plataforma.
 
 <p align="center">
