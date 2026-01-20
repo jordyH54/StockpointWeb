@@ -12,7 +12,7 @@ La aplicación web permite la gestión de procesos empresariales a través de un
 
 El sistema fue implementado en los siguientes contextos:
 
-* Punto de Venta (POS)
+* Punto de Venta 
 * Historial Clínicos
 * Gestión de Pólizas para Aseguradora
 
